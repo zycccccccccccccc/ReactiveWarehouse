@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: WarehouseSystemWithWebflux
+  data:
+    mongodb:
+      uri: mongodb://admin:BeiJingJiaoTongDaXue1234567890@58.87.105.2:27017/admin
+    redis:
+      host: 58.87.105.2
+      port: 6379
+      password: BeiJingJiaoTongDaXue1234567890
+      timeout: 5000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1ms
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: DEBUG
+    com.bjtu.warehousesystemwithwebflux: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+jwt:
+  secret: your_secret_key
+  expiration: 3600000 # 1 hour in milliseconds
+
+springdoc:
+  version: '@springdoc.version@'
+  swagger-ui:
+    use-root-path: true
